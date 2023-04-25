@@ -38,16 +38,16 @@
                                     <div class="font-semibold text-left">pembeli</div>
                                 </th>
                                 <th class="p-2">
-                                    <div class="font-semibold text-center">alamat</div>
+                                    <div class="font-semibold text-left">alamat</div>
                                 </th>
                                 <th class="p-2">
-                                    <div class="font-semibold text-center">telp</div>
+                                    <div class="font-semibold text-left">telp</div>
                                 </th>
                                 <th class="p-2">
-                                    <div class="font-semibold text-center">total</div>
+                                    <div class="font-semibold text-left">total</div>
                                 </th>
                                 <th class="p-2">
-                                    <div class="font-semibold text-center">kode admin</div>
+                                    <div class="font-semibold text-left">kode admin</div>
                                 </th>
                             </tr>
                         </thead>
