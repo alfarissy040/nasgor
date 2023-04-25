@@ -7,8 +7,7 @@
     "version": "1.0.0",
     "main": "index.js",
     "directories": {
-        "test": "tests",
-        "tailwind": "npx tailwindcss -i ./pulic/css/input.css -o ./pulic/css/main.css --watch"
+        "test": "tests"
     },
     "dependencies": {
         "any-promise": "^1.3.0",
@@ -85,7 +84,8 @@
         "yaml": "^1.10.2"
     },
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "tailwind": "npx tailwindcss -i ./public/css/input.css -o ./public/css/main.css --watch"
     },
     "author": "",
     "license": "ISC"

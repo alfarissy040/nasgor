@@ -2,6 +2,12 @@
 
 namespace Config;
 
+use Config\Services;
+use App\Controllers\Api;
+use App\Controllers\Home;
+use App\Controllers\Menu;
+use App\Controllers\Transaksi;
+
 // Create a new instance of our RouteCollection class.
 $routes = Services::routes();
 
@@ -30,6 +36,25 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+
+$routes->group('/admin', static function ($routes) {
+    $routes->group("menu", static function ($routes) {
+        $routes->get("/", [Menu::class, "index"]);
+        // create
+        $routes->get("create", [Menu::class, "create"]);
+        $routes->post("create", [Menu::class, "store"]);
+        // edit
+        $routes->get("(:num)/edit", [Menu::class, "edit"]);
+        $routes->put("(:num)/edit", [Menu::class, "update"]);
+        // delete
+        $routes->delete("(:num)/delete", [Menu::class, "delete"]);
+    });
+    $routes->get("transaksi", [Transaksi::class, "index"]);
+});
+
+$routes->group("api", static function ($routes) {
+    $routes->post("tambah-pesanan", [Api::class, "tambahPesanan"]);
+});
 
 /*
  * --------------------------------------------------------------------
