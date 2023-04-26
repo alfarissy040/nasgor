@@ -15,7 +15,7 @@
         <div class="flex-1 h-screen overscroll-y-auto p-3">
             <header class="sticky top-0 z-50 w-full shadow-md rounded-md transition-all flex-1 h-32 overflow-clip"
                 id="indexHeader"
-                style="background-image: url('<?= base_url("image/bg.jpg") ?>'); background-size: cover; background-position: top; back">
+                style="background-image: url('<?= base_url("image/bg.jpg") ?>'); background-size: cover; background-position: top;">
                 <div class="grid grid-cols-2 items-center gap-y-3 h-full py-3 px-6 bg-slate-900 bg-opacity-25">
                     <h1 class="text-2xl font-bold text-slate-50">
                         Menu

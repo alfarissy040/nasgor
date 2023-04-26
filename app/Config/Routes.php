@@ -4,8 +4,8 @@ namespace Config;
 
 use Config\Services;
 use App\Controllers\Api;
-use App\Controllers\Home;
 use App\Controllers\Menu;
+use App\Controllers\User;
 use App\Controllers\Transaksi;
 
 // Create a new instance of our RouteCollection class.
@@ -37,15 +37,33 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
-$routes->group('/admin', static function ($routes) {
+// login
+$routes->get("/login",
+    [User::class, "login"],
+    ['filter' => 'logged']
+);
+$routes->post("/login", [User::class, "auth"], ['filter' => 'logged']);
+
+// register
+$routes->get("/register", [User::class, "register"], ['filter' => 'logged']);
+$routes->post("/register", [User::class, "store"], ['filter' => 'logged']);
+
+// logout
+$routes->post("/logout", [User::class, "logout"], ['filter' => 'auth']);
+
+// admin
+$routes->group('/admin', ['filter' => 'auth'], static function ($routes) {
     $routes->group("menu", static function ($routes) {
         $routes->get("/", [Menu::class, "index"]);
+
         // create
         $routes->get("create", [Menu::class, "create"]);
         $routes->post("create", [Menu::class, "store"]);
+
         // edit
         $routes->get("(:num)/edit", [Menu::class, "edit"]);
         $routes->put("(:num)/edit", [Menu::class, "update"]);
+
         // delete
         $routes->delete("(:num)/delete", [Menu::class, "delete"]);
     });
