@@ -4,24 +4,17 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class TransaksiModel extends Model
+class DetailModel extends Model
 {
     protected $DBGroup = 'default';
-    protected $table = 'transaksi';
+    protected $table = 'detail_pesanan';
     protected $primaryKey = 'id';
     protected $useAutoIncrement = true;
     protected $insertID = 0;
     protected $returnType = 'array';
     protected $useSoftDeletes = false;
     protected $protectFields = true;
-    protected $allowedFields = ["kd_transaksi",
-        "tgl_transaksi",
-        "nama_pembeli",
-        "alamat",
-        "no_telp",
-        "total_bayar",
-        "kd_admin"
-    ];
+    protected $allowedFields = ["kd_transaksi", "kd_menu", "harga", "jumlah_pesanan", "sub_total"];
 
     // Dates
     protected $useTimestamps = false;

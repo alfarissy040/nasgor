@@ -4,6 +4,7 @@ namespace Config;
 
 use Config\Services;
 use App\Controllers\Api;
+use App\Controllers\Home;
 use App\Controllers\Menu;
 use App\Controllers\User;
 use App\Controllers\Transaksi;
@@ -35,7 +36,10 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->get('/', [Home::class, "index"]);
+$routes->post('/', [Home::class, "tambahPesanan"]);
+$routes->get('detail', [Home::class, "shoopingCart"]);
+$routes->post('detail', [Home::class, "bayar"]);
 
 // login
 $routes->get("/login",
@@ -68,10 +72,6 @@ $routes->group('/admin', ['filter' => 'auth'], static function ($routes) {
         $routes->delete("(:num)/delete", [Menu::class, "delete"]);
     });
     $routes->get("transaksi", [Transaksi::class, "index"]);
-});
-
-$routes->group("api", static function ($routes) {
-    $routes->post("tambah-pesanan", [Api::class, "tambahPesanan"]);
 });
 
 /*
