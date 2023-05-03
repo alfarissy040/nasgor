@@ -94,6 +94,6 @@ class User extends BaseController
     public function logout()
     {
         session()->destroy();
-        redirect()->to("/");
+        return redirect()->to("/");
     }
 }

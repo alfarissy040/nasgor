@@ -14,7 +14,7 @@
         <header class="w-full shadow-md rounded-md transition-all flex-1 h-32 overflow-clip"
             style="background-image: url('<?= base_url("image/bg.jpg") ?>'); background-size: cover; background-position: top;">
             <div class="flex items-center h-full py-3 px-6 bg-slate-900 bg-opacity-25 gap-x-3">
-                <a href="<?= base_url("admin") ?>" class="p-2 rounded bg-emerald-500 text-white">
+                <a href="<?= base_url("admin/menu") ?>" class="p-2 rounded bg-emerald-500 text-white">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
                         <path fill-rule="evenodd"
                             d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z"
